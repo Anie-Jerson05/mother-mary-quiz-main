@@ -3,7 +3,7 @@ import { Volume2, VolumeX } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 // Soft instrumental loop (royalty-free, calm pad/strings)
-const HYMN_URL = "";
+const HYMN_URL = "src/assets/vidssave.com Salve Regina _ Traditional Latin Hymn (Official Lyric Music Video) - Francesca LaRosa LOW.mp3";
 
 export const MusicToggle = () => {
   const [on, setOn] = useState(false);
