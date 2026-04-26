@@ -1,0 +1,169 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Outfit:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Mother Mary Quiz — Divine White / Blue / Gold Design System */
+
+@layer base {
+  :root {
+    --background: 210 60% 98%;
+    --foreground: 220 45% 18%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 220 45% 18%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 45% 18%;
+
+    /* Marian blue */
+    --primary: 218 70% 48%;
+    --primary-foreground: 0 0% 100%;
+    --primary-glow: 215 85% 70%;
+    --primary-deep: 224 60% 28%;
+
+    /* Soft sky */
+    --secondary: 210 60% 95%;
+    --secondary-foreground: 224 60% 28%;
+
+    --muted: 210 40% 96%;
+    --muted-foreground: 220 20% 45%;
+
+    /* Divine gold */
+    --accent: 43 74% 55%;
+    --accent-foreground: 224 60% 18%;
+    --accent-glow: 45 90% 70%;
+    --accent-deep: 38 65% 42%;
+
+    --destructive: 0 70% 55%;
+    --destructive-foreground: 0 0% 100%;
+    --success: 145 60% 42%;
+    --success-foreground: 0 0% 100%;
+
+    --border: 215 40% 88%;
+    --input: 215 40% 88%;
+    --ring: 43 74% 55%;
+
+    --radius: 1.25rem;
+
+    /* Gradients */
+    --gradient-divine: linear-gradient(135deg, hsl(210 80% 96%) 0%, hsl(220 70% 92%) 50%, hsl(45 70% 92%) 100%);
+    --gradient-celestial: radial-gradient(ellipse at top, hsl(210 90% 92%) 0%, hsl(220 60% 88%) 40%, hsl(225 50% 80%) 100%);
+    --gradient-gold: linear-gradient(135deg, hsl(45 90% 70%) 0%, hsl(43 80% 55%) 50%, hsl(38 70% 45%) 100%);
+    --gradient-blue: linear-gradient(135deg, hsl(215 85% 70%) 0%, hsl(218 70% 48%) 100%);
+    --gradient-halo: radial-gradient(circle, hsl(45 95% 75% / 0.6) 0%, hsl(45 90% 70% / 0.2) 50%, transparent 70%);
+
+    /* Shadows */
+    --shadow-divine: 0 20px 60px -15px hsl(218 70% 48% / 0.25), 0 8px 24px -8px hsl(43 74% 55% / 0.2);
+    --shadow-glow-gold: 0 0 30px hsl(45 90% 70% / 0.6), 0 0 60px hsl(43 80% 60% / 0.3);
+    --shadow-glow-blue: 0 0 24px hsl(215 85% 70% / 0.5);
+    --shadow-soft: 0 8px 32px -8px hsl(218 50% 40% / 0.15);
+    --shadow-card: 0 12px 40px -12px hsl(220 50% 30% / 0.18);
+
+    /* Transitions */
+    --ease-divine: cubic-bezier(0.16, 1, 0.3, 1);
+    --transition-smooth: all 0.4s var(--ease-divine);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Outfit', system-ui, sans-serif;
+    background: var(--gradient-celestial);
+    background-attachment: fixed;
+    min-height: 100vh;
+  }
+  h1, h2, h3, .font-serif {
+    font-family: 'Cormorant Garamond', serif;
+    letter-spacing: -0.01em;
+  }
+}
+
+@layer utilities {
+  .text-gradient-gold {
+    background: var(--gradient-gold);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  .text-gradient-blue {
+    background: var(--gradient-blue);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  .bg-gradient-divine { background: var(--gradient-divine); }
+  .bg-gradient-celestial { background: var(--gradient-celestial); }
+  .bg-gradient-gold { background: var(--gradient-gold); }
+  .bg-gradient-blue { background: var(--gradient-blue); }
+  .bg-halo { background: var(--gradient-halo); }
+  .shadow-divine { box-shadow: var(--shadow-divine); }
+  .shadow-glow-gold { box-shadow: var(--shadow-glow-gold); }
+  .shadow-glow-blue { box-shadow: var(--shadow-glow-blue); }
+  .shadow-soft { box-shadow: var(--shadow-soft); }
+  .shadow-card { box-shadow: var(--shadow-card); }
+  .transition-divine { transition: var(--transition-smooth); }
+}
+
+/* Keyframes */
+@keyframes float-up {
+  0% { transform: translateY(100vh) translateX(0) scale(0); opacity: 0; }
+  10% { opacity: 1; transform: translateY(90vh) translateX(10px) scale(1); }
+  90% { opacity: 1; }
+  100% { transform: translateY(-10vh) translateX(-20px) scale(0.5); opacity: 0; }
+}
+@keyframes halo-pulse {
+  0%, 100% { opacity: 0.6; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.08); }
+}
+@keyframes sparkle {
+  0%, 100% { opacity: 0; transform: scale(0) rotate(0deg); }
+  50% { opacity: 1; transform: scale(1) rotate(180deg); }
+}
+@keyframes fade-in-up {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes scale-in {
+  from { opacity: 0; transform: scale(0.92); }
+  to { opacity: 1; transform: scale(1); }
+}
+@keyframes gentle-bob {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+}
+@keyframes joyful-dance {
+  0%, 100% { transform: translateY(0) rotate(-2deg); }
+  25% { transform: translateY(-8px) rotate(2deg); }
+  50% { transform: translateY(-4px) rotate(-1deg); }
+  75% { transform: translateY(-10px) rotate(2deg); }
+}
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+@keyframes correct-pop {
+  0% { transform: scale(1); }
+  40% { transform: scale(1.05); box-shadow: 0 0 0 8px hsl(145 60% 60% / 0.3); }
+  100% { transform: scale(1); box-shadow: 0 0 0 0 hsl(145 60% 60% / 0); }
+}
+@keyframes wrong-shake {
+  0%, 100% { transform: translateX(0); }
+  20%, 60% { transform: translateX(-6px); }
+  40%, 80% { transform: translateX(6px); }
+}
+
+.animate-float-up { animation: float-up linear infinite; }
+.animate-halo-pulse { animation: halo-pulse 3s ease-in-out infinite; }
+.animate-sparkle { animation: sparkle 1.4s ease-in-out infinite; }
+.animate-fade-in-up { animation: fade-in-up 0.5s var(--ease-divine) both; }
+.animate-scale-in { animation: scale-in 0.5s var(--ease-divine) both; }
+.animate-gentle-bob { animation: gentle-bob 4s ease-in-out infinite; }
+.animate-joyful-dance { animation: joyful-dance 1.6s ease-in-out infinite; }
+.animate-correct-pop { animation: correct-pop 0.6s ease-out; }
+.animate-wrong-shake { animation: wrong-shake 0.4s ease-in-out; }
